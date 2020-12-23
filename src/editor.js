@@ -19,6 +19,10 @@ function createHTML(options = {}) {
 <head>
     <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <style>
+        @font-face{
+            font-family: 'HP Simplified';
+            src: url('http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.ttf') format('truetype');
+            }
         * {outline: 0px solid transparent;-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touch-callout: none;}
         html, body { margin: 0; padding: 0;font-family: Arial, Helvetica, sans-serif; font-size:1em;}
         body { overflow-y: hidden; -webkit-overflow-scrolling: touch;height: 100%;background-color: ${backgroundColor};}
