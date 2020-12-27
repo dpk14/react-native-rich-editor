@@ -19,7 +19,7 @@ function createHTML(options = {}) {
 <head>
     <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <style>
-@font-face {font-family: 'HP Simplified'; src: url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.eot"); src: url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.eot?#iefix") format("embedded-opentype"), url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.woff2") format("woff2"), url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.woff") format("woff"), url("../font/hp-simplified-556.ttf") format("truetype"), url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.svg#HP Simplified") format("svg"); }
+@font-face {font-family: 'HP Simplified'; src: url("../font/hp-simplified-556.ttf") format("truetype"); }
         * {outline: 0px solid transparent;-webkit-tap-highlight-color: rgba(0,0,0,0.0);-webkit-touch-callout: none;}
         html, body { margin: 0; padding: 0; opacity: .94; font-family: HP Simplified, Helvetica, sans-serif; font-size:1em; background-color: transparent;}
         body { overflow-y: hidden; -webkit-overflow-scrolling: touch;height: 100%;background-color: ${backgroundColor};}
