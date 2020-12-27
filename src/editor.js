@@ -1,7 +1,7 @@
 function createHTML(options = {}) {
     const {
-        backgroundColor = '#FFF',
-        color = '#000033',
+        backgroundColor = 'transparent',//rgba(0, 0, 0, 0)',
+        color = 'transparent',
         placeholderColor = '#a9a9a9',
         contentCSSText = '',
         cssText = '',
@@ -20,13 +20,13 @@ function createHTML(options = {}) {
     <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <style>
 @font-face {font-family: 'HP Simplified'; src: url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.eot"); src: url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.eot?#iefix") format("embedded-opentype"), url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.woff2") format("woff2"), url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.woff") format("woff"), url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.ttf") format("truetype"), url("http://db.onlinewebfonts.com/t/6cb78fb592f9a8244397b1bd220d6453.svg#HP Simplified") format("svg"); }
-        * {outline: 0px solid transparent;-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touch-callout: none;}
-        html, body { margin: 0; padding: 0; opacity: .94; font-family: HP Simplified, Helvetica, sans-serif; font-size:1em;}
+        * {outline: 0px solid transparent;-webkit-tap-highlight-color: rgba(0,0,0,0.0);-webkit-touch-callout: none;}
+        html, body { margin: 0; padding: 0; opacity: .94; font-family: HP Simplified, Helvetica, sans-serif; font-size:1em; background-color: transparent;}
         body { overflow-y: hidden; -webkit-overflow-scrolling: touch;height: 100%;background-color: ${backgroundColor};}
         img {max-width: 98%;margin-left:auto;margin-right:auto;display: block;}
         video {max-width: 98%;margin-left:auto;margin-right:auto;display: block;}
-        .content {font-family: HP Simplified, Helvetica, sans-serif;color: ${color}; width: 100%;height: 100%;-webkit-overflow-scrolling: touch;padding-left: 0;padding-right: 0;}
-        .pell { height: 100%;} .pell-content { outline: 0; overflow-y: auto;padding: 10px;height: 100%;${contentCSSText}}
+        .content {font-family: HP Simplified, Helvetica, sans-serif; background-color: transparent; color: ${color}; width: 100%;height: 100%;-webkit-overflow-scrolling: touch;padding-left: 0;padding-right: 0;}
+        .pell { height: 100%; background-color: transparent;} .pell-content { background-color: transparent; outline: 0; overflow-y: auto;padding: 10px;height: 100%;${contentCSSText}}
         table {width: 100% !important;}
         table td {width: inherit;}
         table span { font-size: 12px !important; }

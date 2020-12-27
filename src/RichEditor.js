@@ -128,6 +128,14 @@ export default class RichTextEditor extends Component {
         // this.setEditorHeight(editorAvailableHeight);
     }*/
 
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        if (nextProps.disabled && nextProps.initialContentHTML != this.props.initialContentHTML) {
+            this.setContentHTML(nextProps.initialContentHTML)
+        }
+        return true
+    }
+
+
     onMessage(event) {
         try {
             const props = this.props;
@@ -198,7 +206,7 @@ export default class RichTextEditor extends Component {
         // console.log(height);
         const {onHeightChange, useContainer} = this.props;
         if (height !== this.state.height) {
-            useContainer && this.setState({height});
+            useContainer && this.setState({height : this.props.height});
             onHeightChange && onHeightChange(height);
         }
     };
@@ -240,6 +248,8 @@ export default class RichTextEditor extends Component {
         return (
             <>
                 <WebView
+                    style={{backgroundColor:'rgba(0,0,0,0.0)', color:'rgba(0,0,0,0.0)'}}
+                    containerStyle={{backgroundColor:'rgba(0,0,0,0.0)', color:'rgba(0,0,0,0.0)'}}
                     useWebKit={true}
                     scrollEnabled={false}
                     hideKeyboardAccessoryView={true}
@@ -269,7 +279,7 @@ export default class RichTextEditor extends Component {
         // If set to false, it will not use a View wrapper
         const {useContainer, style, initialHeight = 0} = this.props;
         return useContainer ? (
-            <View style={[style, {height: height || initialHeight}]}>{this.renderWebView()}</View>
+            <View style={[style, {height: initialHeight, backgroundColor: 'rgba(0, 0, 0, 0)'}]}>{this.renderWebView()}</View>
         ) : (
             this.renderWebView()
         );
@@ -410,6 +420,7 @@ export default class RichTextEditor extends Component {
 const styles = StyleSheet.create({
     _input: {
         position: 'absolute',
+        backgroundColor : 'rgba(0,0,0,0.0)',
         width: 1,
         height: 1,
         zIndex: -999,
